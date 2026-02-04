@@ -16,7 +16,7 @@ const CodeBlock = ({ code, language = 'bash' }) => (
 );
 
 const Docs = () => {
-  const [activeTab, setActiveTab] = useState('getting-started');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigation = [
     {
@@ -44,11 +44,53 @@ const Docs = () => {
   ];
 
   return (
-    <section id="docs" className="py-24 bg-bg">
+    <section id="docs" className="py-24 bg-bg relative min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Sidebar */}
-          <aside className="lg:w-64 shrink-0">
+          {/* Mobile Sidebar Toggle */}
+          <div className="lg:hidden mb-8">
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="w-full flex items-center justify-between p-4 rounded-xl glass border border-border text-text font-medium"
+            >
+              <span>Navigation</span>
+              <svg 
+                className={`w-5 h-5 transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className={`mt-2 glass rounded-xl border border-border overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="p-4 space-y-6">
+                {navigation.map((group) => (
+                  <div key={group.title}>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-muted/30 mb-3">
+                      {group.title}
+                    </h4>
+                    <ul className="space-y-2">
+                      {group.items.map((item) => (
+                        <li key={item.id}>
+                          <a
+                            href={`#${item.id}`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="text-sm font-medium text-muted hover:text-primary transition-colors block py-1"
+                          >
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Sidebar */}
+          <aside className="hidden lg:block lg:w-64 shrink-0">
             <div className="sticky top-32 space-y-8">
               {navigation.map((group) => (
                 <div key={group.title}>

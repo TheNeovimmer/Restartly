@@ -40,14 +40,14 @@ const FeatureShowcase = () => {
   }, { scope: container });
 
   return (
-    <div ref={container} className="max-w-7xl mx-auto px-6 py-24 space-y-32">
+    <div ref={container} className="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16 md:space-y-32">
       {/* Auto-Detection Showcase */}
       <section ref={section1} className="flex flex-col lg:flex-row items-center gap-16">
         <div className="content lg:w-1/2">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold tracking-wider text-blue-400 uppercase">
             Zero-Config Required
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Intelligent <br /><span className="text-blue-400">Auto-Detection</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Intelligent <br /><span className="text-blue-400">Auto-Detection</span></h2>
           <p className="text-muted text-lg leading-relaxed mb-8">
             Restartly V1.1.0 eliminates the need to specify your entry point. It intelligently scans your project root for common entry files and starts the right process automatically.
           </p>
@@ -89,7 +89,7 @@ const FeatureShowcase = () => {
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-magenta-500/10 border border-magenta-500/20 text-xs font-semibold tracking-wider text-magenta-400 uppercase">
             Project-Specific
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Unified <br /><span className="text-magenta-400">Configuration</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Unified <br /><span className="text-magenta-400">Configuration</span></h2>
           <p className="text-muted text-lg leading-relaxed mb-8">
             Take control of your workflow with <code className="text-text bg-card border border-border px-1 rounded">restartly.json</code>. Define custom watch paths, ignore complex patterns, and execution commands once.
           </p>

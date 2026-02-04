@@ -38,15 +38,15 @@ const Hero = () => {
   return (
     <section ref={container} className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Glows */}
-      <div ref={glow1Ref} className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
-      <div ref={glow2Ref} className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2" />
+      <div ref={glow1Ref} className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/20 rounded-full blur-[80px] md:blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
+      <div ref={glow2Ref} className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-secondary/10 rounded-full blur-[80px] md:blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 text-center">
         <div ref={badgeRef} className="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-border text-xs font-semibold tracking-wider text-primary uppercase">
           Meet the new standard for Node.js development
         </div>
         
-        <h1 ref={titleRef} className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight text-text">
+        <h1 ref={titleRef} className="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight text-text">
           Develop faster with <br />
           <span className="text-gradient">Restartly</span>
         </h1>
@@ -85,8 +85,8 @@ const Hero = () => {
             <div className="w-3 h-3 rounded-full bg-green-500/50" />
             <span className="text-xs text-muted/30 ml-2 font-mono">restartly — 80x24</span>
           </div>
-          <div className="p-8 text-left font-mono text-sm leading-relaxed overflow-x-auto bg-card">
-            <pre className="text-primary tracking-tighter mb-4">
+          <div className="p-4 md:p-8 text-left font-mono text-xs md:text-sm leading-relaxed overflow-x-auto bg-card">
+            <pre className="text-primary tracking-tighter mb-4 scale-[0.8] md:scale-100 origin-left">
 {`  ██████╗ ███████╗███████╗████████╗ █████╗ ██████╗ ████████╗██╗     ██╗   ██╗
   ██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██║     ╚██╗ ██╔╝
   ██████╔╝█████╗  ███████╗   ██║   ███████║██████╔╝   ██║   ██║      ╚████╔╝ 
