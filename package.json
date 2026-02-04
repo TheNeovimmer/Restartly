@@ -1,0 +1,37 @@
+{
+  "name": "restartly",
+  "version": "1.0.0",
+  "description": "A high-performance, developer-friendly nodemon alternative.",
+  "main": "./dist/index.js",
+  "bin": {
+    "restartly": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodemon",
+    "watch",
+    "restart",
+    "development",
+    "tool",
+    "cli"
+  ],
+  "author": "TheNeovimmer",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "chokidar": "^4.0.1",
+    "commander": "^12.1.0",
+    "ora": "^8.1.1",
+    "picocolors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}
