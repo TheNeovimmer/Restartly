@@ -27,7 +27,7 @@ const FRAMEWORK_COMMANDS = {
 program
     .name('restartly')
     .description('A professional-grade automatic reload tool for Node.js and Bun')
-    .version('1.3.0')
+    .version('1.3.1')
     .argument('[script]', 'Script to run')
     .option('-w, --watch <paths...>', 'Paths to watch')
     .option('-i, --ignore <patterns...>', 'Patterns to ignore')
