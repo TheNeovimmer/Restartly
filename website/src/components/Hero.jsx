@@ -87,7 +87,7 @@ const Hero = () => {
             <div className="w-3 h-3 rounded-full bg-green-500/50" />
             <span className="text-xs text-muted/30 ml-2 font-mono">restartly — 80x24</span>
           </div>
-          <div className="p-4 md:p-8 text-left font-mono text-xs md:text-sm leading-relaxed overflow-x-auto bg-card">
+          <div className="p-4 md:p-8 text-left font-mono text-xs md:text-sm leading-relaxed overflow-x-auto bg-card no-scrollbar">
             <pre className="text-primary tracking-tighter mb-4 scale-[0.8] md:scale-100 origin-left">
 {`  ██████╗ ███████╗███████╗████████╗ █████╗ ██████╗ ████████╗██╗     ██╗   ██╗
   ██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██║     ╚██╗ ██╔╝
