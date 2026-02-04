@@ -11,7 +11,7 @@
 **High-performance. Developer-friendly. Stylish.**  
 _Built for speed, styled for impact, and designed to keep you in the flow._
 
-[Website](https://restartly.dev) • [Documentation](https://restartly.dev/docs) • [GitHub](https://github.com/theneovimmer/restartly)
+[Website](https://restartly.vercel.app) • [Documentation](https://restartly.vercel.app/docs) • [GitHub](https://github.com/theneovimmer/restartly)
 
 ---
 
