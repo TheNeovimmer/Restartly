@@ -3,18 +3,38 @@
 @theme {
   --color-primary: #00cfd5;
   --color-secondary: #ff00ff;
-  --color-bg: #0a0a0c;
-  --color-card: #16161a;
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-text: var(--text);
+  --color-border: var(--border);
 }
 
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg: #0a0a0c;
+  --card: #16161a;
+  --text: rgba(255, 255, 255, 0.87);
+  --border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(22, 22, 26, 0.7);
+  --muted: rgba(255, 255, 255, 0.6);
+}
+
+:root.light {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --border: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --muted: rgba(15, 23, 42, 0.6);
+}
+
+:root {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: var(--color-bg);
+  color-scheme: dark light;
+  color: var(--text);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,10 +50,10 @@ body {
 
 /* Custom Utilities */
 .glass {
-  background: rgba(22, 22, 26, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
 }
 
 .text-gradient {
@@ -51,7 +71,13 @@ body {
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

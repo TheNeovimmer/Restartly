@@ -4,6 +4,29 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Docs from './components/Docs';
 import Footer from './components/Footer';
+import { ReactLenis } from 'lenis/react';
+
+// Theme Context
+export const ThemeContext = React.createContext();
+
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'dark');
+
+  React.useEffect(() => {
+    document.documentElement.classList.toggle('light', theme === 'light');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -16,19 +39,23 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-bg text-white selection:bg-primary/30 selection:text-primary">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/docs" element={<Docs />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <ReactLenis root>
+        <Router>
+          <ScrollToTop />
+          <div className="min-h-screen bg-bg text-text selection:bg-primary/30 selection:text-primary transition-colors duration-300">
+            <Navbar />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/docs" element={<Docs />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </ReactLenis>
+    </ThemeProvider>
   );
 }
 

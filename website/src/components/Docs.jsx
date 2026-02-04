@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 
 const DocSection = ({ id, title, children }) => (
   <section id={id} className="scroll-mt-32 mb-16">
-    <h3 className="text-3xl font-bold mb-6 text-white">{title}</h3>
-    <div className="text-white/60 leading-relaxed space-y-4">
+    <h3 className="text-3xl font-bold mb-6 text-text">{title}</h3>
+    <div className="text-muted leading-relaxed space-y-4">
       {children}
     </div>
   </section>
 );
 
 const CodeBlock = ({ code, language = 'bash' }) => (
-  <div className="bg-black/40 rounded-xl p-6 font-mono text-sm text-primary border border-white/5 my-6 overflow-x-auto">
+  <div className="bg-card rounded-xl p-6 font-mono text-sm text-primary border border-border my-6 overflow-x-auto">
     <pre><code>{code}</code></pre>
   </div>
 );
@@ -44,7 +44,7 @@ const Docs = () => {
   ];
 
   return (
-    <section id="docs" className="py-24 bg-white/1">
+    <section id="docs" className="py-24 bg-bg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Sidebar */}
@@ -52,7 +52,7 @@ const Docs = () => {
             <div className="sticky top-32 space-y-8">
               {navigation.map((group) => (
                 <div key={group.title}>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-muted/30 mb-4">
                     {group.title}
                   </h4>
                   <ul className="space-y-2">
@@ -60,7 +60,7 @@ const Docs = () => {
                       <li key={item.id}>
                         <a
                           href={`#${item.id}`}
-                          className="text-sm font-medium text-white/50 hover:text-primary transition-colors block py-1"
+                          className="text-sm font-medium text-muted hover:text-primary transition-colors block py-1"
                         >
                           {item.label}
                         </a>
@@ -75,8 +75,8 @@ const Docs = () => {
           {/* Content */}
           <div className="grow max-w-3xl">
             <div className="mb-12">
-              <h2 className="text-4xl md:text-5xl font-black mb-4">Documentation</h2>
-              <p className="text-white/50 text-lg">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-text">Documentation</h2>
+              <p className="text-muted text-lg">
                 Everything you need to know about setting up and using Restartly.
               </p>
             </div>
@@ -99,25 +99,25 @@ const Docs = () => {
               <p>Restartly provides a set of flags to customize its behavior. You can combine multiple flags to suit your development workflow.</p>
               <div className="space-y-6 mt-8">
                 <div>
-                  <h4 className="text-white font-bold mb-2 flex items-center">
+                  <h4 className="text-text font-bold mb-2 flex items-center">
                     <span className="text-primary mr-2">--watch, -w</span>
-                    <span className="text-xs text-white/20 font-normal ml-auto">Default: .</span>
+                    <span className="text-xs text-muted/20 font-normal ml-auto">Default: .</span>
                   </h4>
                   <p className="text-sm">Comma-separated list of directories or files to watch for changes.</p>
                   <CodeBlock code="restartly app.js --watch src,config,lib" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-2 flex items-center">
+                  <h4 className="text-text font-bold mb-2 flex items-center">
                     <span className="text-primary mr-2">--ignore, -i</span>
-                    <span className="text-xs text-white/20 font-normal ml-auto">Default: node_modules, .git</span>
+                    <span className="text-xs text-muted/20 font-normal ml-auto">Default: node_modules, .git</span>
                   </h4>
                   <p className="text-sm">Patterns to ignore. Supports glob patterns.</p>
                   <CodeBlock code="restartly app.js --ignore '**/*.test.js', 'docs/*'" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-2 flex items-center">
+                  <h4 className="text-text font-bold mb-2 flex items-center">
                     <span className="text-primary mr-2">--exec, -x</span>
-                    <span className="text-xs text-white/20 font-normal ml-auto">Default: node</span>
+                    <span className="text-xs text-muted/20 font-normal ml-auto">Default: node</span>
                   </h4>
                   <p className="text-sm">The command used to execute the script.</p>
                   <CodeBlock code='restartly --exec "python3 main.py"' />

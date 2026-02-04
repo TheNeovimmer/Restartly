@@ -7,11 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FeatureCard = ({ icon, title, description, cardRef }) => (
   <div ref={cardRef} className="glass p-8 rounded-3xl group hover:border-primary/30 transition-all duration-300 opacity-0">
-    <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary/10 transition-colors">
+    <div className="w-12 h-12 bg-card rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary/10 transition-colors border border-border">
       {icon}
     </div>
     <h3 className="text-xl font-bold mb-4">{title}</h3>
-    <p className="text-white/50 leading-relaxed text-sm">
+    <p className="text-muted leading-relaxed text-sm">
       {description}
     </p>
   </div>
@@ -92,7 +92,7 @@ const Features = () => {
     <section ref={container} id="features" className="py-24 max-w-7xl mx-auto px-6">
       <div className="text-center mb-16">
         <h2 ref={titleRef} className="text-3xl md:text-5xl font-bold mb-6">Ultra Capabilities</h2>
-        <p className="text-white/50 text-lg max-w-2xl mx-auto">
+        <p className="text-muted text-lg max-w-2xl mx-auto">
           Restartly V1.1.0 brings a new level of automation and style to your daily workflow.
         </p>
       </div>

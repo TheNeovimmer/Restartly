@@ -48,23 +48,23 @@ const FeatureShowcase = () => {
             Zero-Config Required
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Intelligent <br /><span className="text-blue-400">Auto-Detection</span></h2>
-          <p className="text-white/60 text-lg leading-relaxed mb-8">
+          <p className="text-muted text-lg leading-relaxed mb-8">
             Restartly V1.1.0 eliminates the need to specify your entry point. It intelligently scans your project root for common entry files and starts the right process automatically.
           </p>
           <ul className="space-y-4">
             {['index.js', 'server.js', 'app.js', 'main.ts'].map((file, i) => (
-              <li key={i} className="flex items-center space-x-3 text-white/80">
+              <li key={i} className="flex items-center space-x-3 text-text">
                 <span className="text-blue-400">✔</span>
-                <code className="bg-white/5 px-2 py-1 rounded text-sm">{file}</code>
-                <span className="text-white/40 font-mono text-xs">detected</span>
+                <code className="bg-card px-2 py-1 rounded text-sm border border-border">{file}</code>
+                <span className="text-muted/40 font-mono text-xs">detected</span>
               </li>
             ))}
           </ul>
         </div>
         <div className="visual lg:w-1/2 flex justify-center">
           <div className="relative glass p-4 rounded-3xl w-full max-w-md">
-            <div className="bg-bg rounded-2xl p-6 font-mono text-sm space-y-3">
-              <div className="flex items-center space-x-2 text-white/40 mb-4 border-b border-white/5 pb-2">
+            <div className="bg-card rounded-2xl p-6 font-mono text-sm space-y-3 border border-border">
+              <div className="flex items-center space-x-2 text-muted/40 mb-4 border-b border-border pb-2">
                 <span>$</span>
                 <span>restartly</span>
               </div>
@@ -72,8 +72,8 @@ const FeatureShowcase = () => {
               <div className="text-blue-400">ℹ Starting: node server.js</div>
               <div className="text-green-400">✔ Watching paths: .</div>
               <div className="animate-pulse flex space-x-2">
-                <div className="h-4 w-1 bg-white/40"></div>
-                <div className="h-4 w-32 bg-white/5 rounded"></div>
+                <div className="h-4 w-1 bg-muted/40"></div>
+                <div className="h-4 w-32 bg-card rounded border border-border"></div>
               </div>
             </div>
             {/* Decorative elements */}
@@ -90,16 +90,16 @@ const FeatureShowcase = () => {
             Project-Specific
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Unified <br /><span className="text-magenta-400">Configuration</span></h2>
-          <p className="text-white/60 text-lg leading-relaxed mb-8">
-            Take control of your workflow with <code className="text-white bg-white/10 px-1 rounded">restartly.json</code>. Define custom watch paths, ignore complex patterns, and execution commands once.
+          <p className="text-muted text-lg leading-relaxed mb-8">
+            Take control of your workflow with <code className="text-text bg-card border border-border px-1 rounded">restartly.json</code>. Define custom watch paths, ignore complex patterns, and execution commands once.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <div className="glass p-4 rounded-2xl text-center">
-              <div className="text-xs text-white/40 mb-1">Debounce</div>
+              <div className="text-xs text-muted/40 mb-1">Debounce</div>
               <div className="text-magenta-400 font-bold">200ms</div>
             </div>
             <div className="glass p-4 rounded-2xl text-center">
-              <div className="text-xs text-white/40 mb-1">Standard</div>
+              <div className="text-xs text-muted/40 mb-1">Standard</div>
               <div className="text-magenta-400 font-bold">ESM</div>
             </div>
           </div>

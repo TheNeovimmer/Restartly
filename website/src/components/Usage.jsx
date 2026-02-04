@@ -6,11 +6,11 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const UsageExample = ({ title, cmd, description, itemRef }) => (
-  <div ref={itemRef} className="bg-white/2 border border-white/10 rounded-2xl p-6 hover:bg-white/5 transition-all opacity-0">
-    <h4 className="text-white font-semibold mb-2">{title}</h4>
-    <p className="text-white/40 text-sm mb-4">{description}</p>
-    <div className="bg-black/40 rounded-xl p-4 font-mono text-sm text-primary border border-white/5">
-      <span className="text-white/30 mr-2">$</span>
+  <div ref={itemRef} className="bg-card border border-border rounded-2xl p-6 hover:bg-card/80 transition-all opacity-0">
+    <h4 className="text-text font-semibold mb-2">{title}</h4>
+    <p className="text-muted text-sm mb-4">{description}</p>
+    <div className="bg-bg/40 rounded-xl p-4 font-mono text-sm text-primary border border-border">
+      <span className="text-muted/30 mr-2">$</span>
       {cmd}
     </div>
   </div>
@@ -62,12 +62,12 @@ const Usage = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} id="usage" className="py-24 bg-white/1 overflow-hidden">
+    <section ref={container} id="usage" className="py-24 bg-card/10 overflow-hidden border-y border-border">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div ref={leftCol}>
             <h2 className="text-3xl md:text-5xl font-bold mb-8">Simple yet powerful</h2>
-            <p className="text-white/50 text-lg mb-10 leading-relaxed">
+            <p className="text-muted text-lg mb-10 leading-relaxed">
               Whether you prefer CLI flags or a dedicated <code className="text-primary bg-primary/10 px-1 rounded">restartly.json</code> file, configuring your environment has never been more intuitive.
             </p>
             
@@ -101,9 +101,9 @@ const Usage = () => {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <code className="text-primary font-bold">--watch, -w</code>
-                    <span className="text-white/40 text-xs">Default: .</span>
+                    <span className="text-muted/40 text-xs">Default: .</span>
                   </div>
-                  <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                  <div className="w-full bg-bg h-1.5 rounded-full overflow-hidden border border-border">
                     <div className="bg-primary h-full w-full" />
                   </div>
                 </div>
@@ -111,9 +111,9 @@ const Usage = () => {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <code className="text-primary font-bold">--ignore, -i</code>
-                    <span className="text-white/40 text-xs">Default: node_modules, .git</span>
+                    <span className="text-muted/40 text-xs">Default: node_modules, .git</span>
                   </div>
-                  <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                  <div className="w-full bg-bg h-1.5 rounded-full overflow-hidden border border-border">
                     <div className="bg-primary h-full w-[85%]" />
                   </div>
                 </div>
@@ -121,16 +121,16 @@ const Usage = () => {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <code className="text-primary font-bold">--exec, -x</code>
-                    <span className="text-white/40 text-xs">Default: node</span>
+                    <span className="text-muted/40 text-xs">Default: node</span>
                   </div>
-                  <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                  <div className="w-full bg-bg h-1.5 rounded-full overflow-hidden border border-border">
                     <div className="bg-primary h-full w-[70%]" />
                   </div>
                 </div>
 
                 <div className="pt-8">
                   <div className="bg-primary/10 border border-primary/20 rounded-2xl p-6 text-sm">
-                    <p className="text-white/80 leading-relaxed italic">
+                    <p className="text-text opacity-80 leading-relaxed italic">
                       "Upgrade to V1.1.0 and feel the difference. From Zero-Config to unified settings, we've got you covered."
                     </p>
                     <div className="mt-4 font-bold text-primary">— Restartly Team</div>
