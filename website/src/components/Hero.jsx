@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -62,19 +63,19 @@ const Hero = () => {
             <span className="text-text">npm i -g restartly</span>
             <button 
               onClick={() => navigator.clipboard.writeText('npm i -g restartly')}
-              className="ml-4 p-2 rounded-lg hover:bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="ml-4 p-2 rounded-lg hover:bg-white/10 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity"
               title="Copy to clipboard"
             >
               📋
             </button>
           </div>
           
-          <a 
-            href="/docs" 
+          <Link 
+            to="/docs" 
             className="px-8 py-4 rounded-xl bg-gradient text-white font-bold hover:shadow-[0_0_20px_rgba(0,207,213,0.4)] transition-all transform hover:scale-105"
           >
             Get Started
-          </a>
+          </Link>
         </div>
 
         {/* Mock Terminal Visual */}
