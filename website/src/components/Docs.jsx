@@ -37,6 +37,8 @@ const Docs = () => {
     {
       title: 'Advanced',
       items: [
+        { id: 'interactive', label: 'Interactive Commands' },
+        { id: 'env-vars', label: 'Environment Variables' },
         { id: 'custom-exec', label: 'Custom Execution' },
         { id: 'debouncing', label: 'Debouncing' },
       ]
@@ -162,7 +164,43 @@ const Docs = () => {
                     <span className="text-xs text-muted/20 font-normal ml-auto">Default: node</span>
                   </h4>
                   <p className="text-sm">The command used to execute the script.</p>
-                  <CodeBlock code='restartly --exec "python3 main.py"' />
+                  <CodeBlock code='restartly --exec "tsx src/index.ts"' />
+                </div>
+                <div>
+                  <h4 className="text-text font-bold mb-2 flex items-center">
+                    <span className="text-primary mr-2">--delay, -l</span>
+                    <span className="text-xs text-muted/20 font-normal ml-auto">Default: 0</span>
+                  </h4>
+                  <p className="text-sm">Adds a delay (in ms) before the process is restarted.</p>
+                  <CodeBlock code='restartly --delay 1000' />
+                </div>
+                <div>
+                  <h4 className="text-text font-bold mb-2 flex items-center">
+                    <span className="text-primary mr-2">--signal, -s</span>
+                    <span className="text-xs text-muted/20 font-normal ml-auto">Default: SIGTERM</span>
+                  </h4>
+                  <p className="text-sm">Specify the termination signal for the process.</p>
+                  <CodeBlock code='restartly --signal SIGKILL' />
+                </div>
+                <div>
+                  <h4 className="text-text font-bold mb-2 flex items-center">
+                    <span className="text-primary mr-2">--polling, -p</span>
+                    <span className="text-xs text-muted/20 font-normal ml-auto">Default: false</span>
+                  </h4>
+                  <p className="text-sm">Use file system polling instead of events (useful for legacy systems or network drives).</p>
+                  <CodeBlock code='restartly --polling' />
+                </div>
+                <div>
+                  <h4 className="text-text font-bold mb-2 flex items-center">
+                    <span className="text-primary mr-2">--verbose, -v</span>
+                  </h4>
+                  <p className="text-sm">Enable detailed logging for debugging.</p>
+                </div>
+                <div>
+                  <h4 className="text-text font-bold mb-2 flex items-center">
+                    <span className="text-primary mr-2">--quiet, -q</span>
+                  </h4>
+                  <p className="text-sm">Minimize output to only essentials.</p>
                 </div>
               </div>
             </DocSection>
@@ -176,6 +214,24 @@ const Docs = () => {
             <DocSection id="ignore-patterns" title="Ignore Patterns">
               <p>To prevent unnecessary reloads, you can ignore certain files or directories. This is useful for temporary files, logs, or coverage reports.</p>
               <CodeBlock code="restartly app.js --ignore 'reports/**/*' --ignore 'tmp/*'" />
+            </DocSection>
+
+            <DocSection id="interactive" title="Interactive Commands">
+              <p>Restartly v1.3.0 introduces interactive terminal commands. While Restartly is running, you can interact with it directly from your terminal.</p>
+              <div className="bg-card/50 p-6 rounded-xl border border-border">
+                <h4 className="text-text font-bold mb-4">Manual Restart</h4>
+                <p className="text-sm mb-4">Type <code>rs</code> and press Enter to trigger an immediate restart of your process without modifying any files.</p>
+                <div className="bg-black/40 p-4 rounded-lg font-mono text-xs text-muted">
+                  $ rs<br />
+                  <span className="text-magenta">↺ Restarting due to manual request...</span>
+                </div>
+              </div>
+            </DocSection>
+
+            <DocSection id="env-vars" title="Environment Variables">
+              <p>Restartly automatically loads <code>.env</code> files from your project root using <code>dotenv</code>. This ensures your application has access to all necessary secrets during development.</p>
+              <p>To use a custom environment file:</p>
+              <CodeBlock code="restartly --env .env.staging" />
             </DocSection>
 
             <DocSection id="custom-exec" title="Custom Execution">

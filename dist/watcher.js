@@ -9,11 +9,12 @@ export class Watcher {
         this.options = options;
     }
     start() {
-        const { watchPaths, ignored, debounceInterval = 200 } = this.options;
+        const { watchPaths, ignored, debounceInterval = 200, usePolling = false } = this.options;
         this.watcher = chokidar.watch(watchPaths, {
             ignored,
             ignoreInitial: true,
-            persistent: true
+            persistent: true,
+            usePolling
         });
         this.watcher.on('all', (event, path) => {
             if (this.isRestarting)
@@ -26,6 +27,9 @@ export class Watcher {
             }, debounceInterval);
         });
         logger.success(`Watching paths: ${watchPaths.join(', ')}`);
+        if (usePolling) {
+            logger.info('Polling mode enabled');
+        }
         if (ignored.length > 0) {
             logger.info(`Ignoring: ${ignored.join(', ')}`);
         }

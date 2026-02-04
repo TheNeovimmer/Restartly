@@ -3,40 +3,66 @@ import { logger } from './logger.js';
 
 export class Runner {
   private process: ChildProcess | null = null;
+  private delayTimer: NodeJS.Timeout | null = null;
 
-  constructor(private command: string, private args: string[]) {}
+  constructor(
+    private command: string, 
+    private args: string[],
+    private options: { signal?: string; delay?: number } = {}
+  ) {}
 
   start(): void {
     if (this.process) {
       this.stop();
     }
 
-    logger.info(`Starting: ${this.command} ${this.args.join(' ')}`);
+    if (this.delayTimer) {
+      clearTimeout(this.delayTimer);
+      this.delayTimer = null;
+    }
 
-    this.process = spawn(this.command, this.args, {
-      stdio: 'inherit',
-      shell: true
-    });
+    const { delay = 0 } = this.options;
 
-    this.process.on('close', (code) => {
-      if (code !== null && code !== 0 && code !== 130) {
-        logger.error(`Process exited with code ${code}`);
-      }
-    });
+    const spawnProcess = () => {
+      logger.info(`Starting: ${this.command} ${this.args.join(' ')}`);
 
-    this.process.on('error', (err) => {
-      logger.error(`Failed to start process: ${err.message}`);
-    });
+      this.process = spawn(this.command, this.args, {
+        stdio: 'inherit',
+        shell: true
+      });
+
+      this.process.on('close', (code) => {
+        if (code !== null && code !== 0 && code !== 130) {
+          logger.error(`Process exited with code ${code}`);
+        }
+      });
+
+      this.process.on('error', (err) => {
+        logger.error(`Failed to start process: ${err.message}`);
+      });
+    };
+
+    if (delay > 0) {
+      this.delayTimer = setTimeout(spawnProcess, delay);
+    } else {
+      spawnProcess();
+    }
   }
 
   stop(): void {
     if (this.process) {
-      this.process.kill('SIGTERM');
+      const signal = (this.options.signal || 'SIGTERM') as NodeJS.Signals;
+      this.process.kill(signal);
       this.process = null;
+    }
+    if (this.delayTimer) {
+      clearTimeout(this.delayTimer);
+      this.delayTimer = null;
     }
   }
 
   restart(): void {
+    this.stop();
     logger.restart('Restarting due to changes...');
     this.start();
   }

@@ -31,24 +31,24 @@ const Features = () => {
 
   const features = [
     {
-      icon: "🔍",
-      title: "Auto-Detection",
-      description: "V1.1.0 Smart Entry Point detection. Automatically finds index.js, server.js, or app.js so you can just run 'restartly'."
+      icon: "🌍",
+      title: "Universal Support",
+      description: "V1.3.0 Native support for Bun and Node.js. Automatically switches runtimes based on your project structure."
     },
     {
-      icon: "⚙️",
-      title: "Config Support",
-      description: "Manage your watch paths, ignores, and custom commands in a unified restartly.json file for seamless project integration."
+      icon: "⌨️",
+      title: "Interactive CLI",
+      description: "Type 'rs' in your terminal for an instant manual restart. No more touching files just to trigger a reload."
     },
     {
-      icon: "🚀",
-      title: "Built for Speed",
-      description: "Leverages native-level file system events for near-instant detection and process reloads."
+      icon: "🧠",
+      title: "Framework Savvy",
+      description: "Intelligent auto-detection for Hono, Next.js, Remix, Astro, and more. It knows how to start your app better than you do."
     },
     {
-      icon: "🎨",
-      title: "Premium CLI UI",
-      description: "A stunning terminal experience with custom ASCII art and high-contrast logging that looks as good as it performs."
+      icon: "🔐",
+      title: "Environment Ready",
+      description: "Built-in .env support via dotenv. Your secrets are automatically injected into your development process."
     },
     {
       icon: "⚡",
@@ -58,7 +58,7 @@ const Features = () => {
     {
       icon: "🛡",
       title: "Reliable Runner",
-      description: "Advanced child process management with clean SIGTERM/SIGINT handling for a tidy development environment."
+      description: "Advanced child process management with custom signal handling (SIGTERM/SIGKILL) for a tidy environment."
     }
   ];
 
@@ -93,7 +93,7 @@ const Features = () => {
       <div className="text-center mb-16">
         <h2 ref={titleRef} className="text-3xl md:text-5xl font-bold mb-6">Ultra Capabilities</h2>
         <p className="text-muted text-lg max-w-2xl mx-auto">
-          Restartly V1.1.0 brings a new level of automation and style to your daily workflow.
+          Restartly V1.3.0 brings a new level of automation and style to your daily workflow.
         </p>
       </div>
       

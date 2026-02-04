@@ -45,14 +45,14 @@ const FeatureShowcase = () => {
       <section ref={section1} className="flex flex-col lg:flex-row items-center gap-16">
         <div className="content lg:w-1/2">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold tracking-wider text-blue-400 uppercase">
-            Zero-Config Required
+            Universal Intelligence
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Intelligent <br /><span className="text-blue-400">Auto-Detection</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Zero-Config <br /><span className="text-blue-400">Framework Magic</span></h2>
           <p className="text-muted text-lg leading-relaxed mb-8">
-            Restartly V1.1.0 eliminates the need to specify your entry point. It intelligently scans your project root for common entry files and starts the right process automatically.
+            Restartly V1.3.0 is built for the modern web. It intelligently detects your framework and runtime—whether it's Bun, Hono, Next.js, or Remix—and handles the execution so you don't have to.
           </p>
           <ul className="space-y-4">
-            {['index.js', 'server.js', 'app.js', 'main.ts'].map((file, i) => (
+            {['bun.lockb', 'server.ts', 'app.js', 'main.ts'].map((file, i) => (
               <li key={i} className="flex items-center space-x-3 text-text">
                 <span className="text-blue-400">✔</span>
                 <code className="bg-card px-2 py-1 rounded text-sm border border-border">{file}</code>
@@ -68,8 +68,8 @@ const FeatureShowcase = () => {
                 <span>$</span>
                 <span>restartly</span>
               </div>
-              <div className="text-blue-400">ℹ Auto-detected entry point: server.js</div>
-              <div className="text-blue-400">ℹ Starting: node server.js</div>
+              <div className="text-blue-400">ℹ Detected Bun project. Using "bun" runtime.</div>
+              <div className="text-blue-400">ℹ Starting: bun run server.ts</div>
               <div className="text-green-400">✔ Watching paths: .</div>
               <div className="animate-pulse flex space-x-2">
                 <div className="h-4 w-1 bg-muted/40"></div>

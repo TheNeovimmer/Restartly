@@ -54,7 +54,7 @@ const Hero = () => {
         
         <p ref={descRef} className="max-w-2xl mx-auto text-lg md:text-xl text-muted mb-12">
           A high-performance, developer-friendly automatic reload tool. 
-          Built for speed, styled for impact, and designed to keep you in the flow.
+          Built for speed, styled for impact, and designed for <b>Node.js & Bun</b>.
         </p>
 
         <div ref={actionsRef} className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -96,7 +96,8 @@ const Hero = () => {
   ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝   ╚═╝   `}
             </pre>
             <div className="space-y-1">
-              <p><span className="text-blue-400">ℹ</span> <span className="text-text">Starting: node server.js</span></p>
+              <p><span className="text-blue-400">ℹ</span> <span className="text-text">Detected Bun project. Using "bun" runtime.</span></p>
+              <p><span className="text-blue-400">ℹ</span> <span className="text-text">Starting: bun run server.ts</span></p>
               <p><span className="text-green-400">✔</span> <span className="text-text">Watching paths: .</span></p>
               <p><span className="text-secondary">↺</span> <span className="text-secondary">Reloading automatically...</span></p>
             </div>

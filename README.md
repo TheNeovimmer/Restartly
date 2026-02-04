@@ -23,9 +23,13 @@ Most reload tools are functional but generic. **Restartly** is a next-generation
 
 - ⚡ **Turbo Speed**: Instant process reloads with sub-millisecond overhead.
 - ✨ **Premium UI**: A beautiful, high-contrast terminal experience with custom ASCII art.
+- 🌍 **Universal Support**: Native detection for Bun, Node.js, and all major frameworks.
 - 🔍 **Auto-Detection**: Zero-config mode that finds your entry point automatically.
+- ⌨️ **Interactive CLI**: Type `rs` to restart manually at any time.
+- 🔐 **Environment Support**: Automatic `.env` loading powered by `dotenv`.
+- 🛠️ **Framework Intelligence**: Built-in support for Hono, Remix, Astro, Next.js, and more.
 - ⚙️ **Powerfully Simple**: Unified configuration via `restartly.json`.
-- 🛡️ **Reliable Runner**: Advanced child process management with clean cleanup.
+- 🛡️ **Reliable Runner**: Advanced child process management with custom termination signals.
 - 📦 **Modern Stack**: Built from the ground up with TypeScript and ESM.
 
 ---
@@ -64,6 +68,15 @@ Specify your entry point explicitly:
 restartly app.ts
 ```
 
+### Framework Support
+
+Restartly automatically detects and configures the best dev command for:
+
+- **Hono** / **Express** / **Fastify**
+- **Next.js** / **Nuxt** / **Remix** / **Astro** / **SvelteKit**
+- **NestJS** / **AdonisJS** / **Strapi**
+- **Bun** (Auto-switches to `bun` runtime)
+
 ### Custom Execution
 
 Need to run something else? Restartly handles it:
@@ -96,6 +109,12 @@ Store your settings in a `restartly.json` file at the root of your project for a
 | `--ignore`   | `-i`      | Patterns to ignore (globs supported) | `node_modules, .git` |
 | `--exec`     | `-x`      | Custom execution command             | `node`               |
 | `--debounce` | `-d`      | Delay before reload (ms)             | `200`                |
+| `--delay`    | `-l`      | Delay before restarting (ms)         | `0`                  |
+| `--signal`   | `-s`      | Signal to send for termination       | `SIGTERM`            |
+| `--polling`  | `-p`      | Use file system polling              | `false`              |
+| `--env`      | `-e`      | Path to .env file                    | `.env`               |
+| `--verbose`  | `-v`      | Enable verbose logging               | `false`              |
+| `--quiet`    | `-q`      | Enable quiet mode                    | `false`              |
 | `--config`   | `-c`      | Path to custom config file           | `restartly.json`     |
 
 ---

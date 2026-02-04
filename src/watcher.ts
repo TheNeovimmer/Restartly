@@ -6,6 +6,7 @@ export interface WatcherOptions {
   ignored: string[];
   onRestart: () => void;
   debounceInterval?: number;
+  usePolling?: boolean;
 }
 
 export class Watcher {
@@ -16,12 +17,13 @@ export class Watcher {
   constructor(private options: WatcherOptions) {}
 
   start(): void {
-    const { watchPaths, ignored, debounceInterval = 200 } = this.options;
+    const { watchPaths, ignored, debounceInterval = 200, usePolling = false } = this.options;
 
     this.watcher = chokidar.watch(watchPaths, {
       ignored,
       ignoreInitial: true,
-      persistent: true
+      persistent: true,
+      usePolling
     });
 
     this.watcher.on('all', (event: string, path: string) => {
@@ -37,6 +39,9 @@ export class Watcher {
     });
 
     logger.success(`Watching paths: ${watchPaths.join(', ')}`);
+    if (usePolling) {
+      logger.info('Polling mode enabled');
+    }
     if (ignored.length > 0) {
       logger.info(`Ignoring: ${ignored.join(', ')}`);
     }
