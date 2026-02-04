@@ -2,20 +2,18 @@ import chalk from 'chalk';
 import pc from 'picocolors';
 
 const banner = `
-${pc.cyan('   _____                 _                 _   _       ')}
-${pc.cyan('  |  __ \\               | |               | | | |      ')}
-${pc.cyan('  | |__) |___  ___ _ __ | |_ __ _ _ __ ___| | | |_   _ ')}
-${pc.cyan('  |  _  // _ \\/ __| __|| __/ _` | ___|_  / | | | | | |')}
-${pc.cyan('  | | \\ \\  __/\\__ \\ |   | || (_| | |    / /| | | | |_| |')}
-${pc.cyan('  |_|  \\_\\___||___/_|    \\__\\__,_|_|   /___|_|_|_|\\__, |')}
-${pc.cyan('                                                   __/ |')}
-${pc.cyan('                                                  |___/ ')}
+  ${chalk.cyan.bold('██████╗ ███████╗███████╗████████╗ █████╗ ██████╗ ████████╗██╗     ██╗   ██╗')}
+  ${chalk.cyan.bold('██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██║     ╚██╗ ██╔╝')}
+  ${chalk.cyan.bold('██████╔╝█████╗  ███████╗   ██║   ███████║██████╔╝   ██║   ██║      ╚████╔╝ ')}
+  ${chalk.cyan.bold('██╔══██╗██╔══╝  ╚════██║   ██║   ██╔══██║██╔══██╗   ██║   ██║       ╚██╔╝  ')}
+  ${chalk.cyan.bold('██║  ██║███████╗███████║   ██║   ██║  ██║██║  ██║   ██║   ███████╗   ██║   ')}
+  ${chalk.cyan.bold('╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝   ╚═╝   ')}
 `;
 
 export const logger = {
   banner(): void {
     console.log(banner);
-    console.log(chalk.gray(`  v1.0.0 - A high-performance automatic reload tool\n`));
+    console.log(chalk.gray(`  v1.1.0 - The Premium Automatic Reload Tool\n`));
   },
 
   info(message: string): void {

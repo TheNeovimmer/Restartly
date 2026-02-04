@@ -1,11 +1,14 @@
 {
   "name": "restartly",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A high-performance, developer-friendly automatic reload tool.",
   "main": "./dist/index.js",
   "bin": {
     "restartly": "./dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
     "build": "tsc",
