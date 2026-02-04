@@ -2,7 +2,7 @@
 
 # ↺ Restartly Ultra
 
-### **v1.3.1 - The Premium Automatic Reload Tool for Modern Developers**
+### **v1.3.2 - The Premium Automatic Reload Tool for Modern Developers**
 
 [![npm version](https://img.shields.io/npm/v/restartly.svg?style=for-the-badge&color=00cfd5)](https://www.npmjs.com/package/restartly)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -116,6 +116,7 @@ Store your settings in a `restartly.json` file at the root of your project for a
 | `--verbose`  | `-v`      | Enable verbose logging               | `false`              |
 | `--quiet`    | `-q`      | Enable quiet mode                    | `false`              |
 | `--config`   | `-c`      | Path to custom config file           | `restartly.json`     |
+| `--list`     |           | List all commands and flags          | `-`                  |
 
 ---
 

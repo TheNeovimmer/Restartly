@@ -49,7 +49,7 @@ const FeatureShowcase = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Zero-Config <br /><span className="text-blue-400">Framework Magic</span></h2>
           <p className="text-muted text-lg leading-relaxed mb-8">
-            Restartly V1.3.0 is built for the modern web. It intelligently detects your framework and runtime—whether it's Bun, Hono, Next.js, or Remix—and handles the execution so you don't have to.
+            Restartly V1.3.2 is built for the modern web. It intelligently detects your framework and runtime—whether it's Bun, Hono, Next.js, or Remix—and handles the execution so you don't have to.
           </p>
           <ul className="space-y-4">
             {['bun.lockb', 'server.ts', 'app.js', 'main.ts'].map((file, i) => (

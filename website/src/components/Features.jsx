@@ -115,12 +115,12 @@ const Features = () => {
     {
       Visual: UniversalVisual,
       title: "Universal Support",
-      description: "V1.3.0 Native support for Bun and Node.js. Automatically switches runtimes based on your project structure."
+      description: "V1.3.2 Native support for Bun and Node.js. Automatically switches runtimes based on your project structure."
     },
     {
       Visual: CliVisual,
       title: "Interactive CLI",
-      description: "Type 'rs' in your terminal for an instant manual restart. No more touching files just to trigger a reload."
+      description: "Type 'rs' to restart manually or use '--list' to see all available commands and flags instantly."
     },
     {
       Visual: FrameworkVisual,
@@ -175,7 +175,7 @@ const Features = () => {
       <div className="text-center mb-16">
         <h2 ref={titleRef} className="text-3xl md:text-5xl font-bold mb-6">Ultra Capabilities</h2>
         <p className="text-muted text-lg max-w-2xl mx-auto">
-          Restartly V1.3.0 brings a new level of automation and style to your daily workflow.
+          Restartly V1.3.2 brings a new level of automation and style to your daily workflow.
         </p>
       </div>
       

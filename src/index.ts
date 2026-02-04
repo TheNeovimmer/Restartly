@@ -31,7 +31,7 @@ const FRAMEWORK_COMMANDS: Record<string, string> = {
 program
   .name('restartly')
   .description('A professional-grade automatic reload tool for Node.js and Bun')
-  .version('1.3.1')
+  .version('1.3.2')
   .argument('[script]', 'Script to run')
   .option('-w, --watch <paths...>', 'Paths to watch')
   .option('-i, --ignore <patterns...>', 'Patterns to ignore')
@@ -44,7 +44,13 @@ program
   .option('-q, --quiet', 'Enable quiet mode')
   .option('-e, --env <path>', 'Path to .env file', '.env')
   .option('-c, --config <path>', 'Path to config file', 'restartly.json')
+  .option('--list', 'List all commands and flags')
   .action((script, options) => {
+    if (options.list) {
+      program.help();
+      return;
+    }
+
     // Set logging mode
     if (options.quiet) logger.setMode('quiet');
     else if (options.verbose) logger.setMode('verbose');
