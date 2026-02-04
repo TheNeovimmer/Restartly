@@ -86,21 +86,21 @@ const FeatureShowcase = () => {
       {/* Config Showcase */}
       <section ref={section2} className="flex flex-col lg:flex-row-reverse items-center gap-16">
         <div className="content lg:w-1/2">
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-magenta-500/10 border border-magenta-500/20 text-xs font-semibold tracking-wider text-magenta-400 uppercase">
+          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary/10 border border-secondary/20 text-xs font-semibold tracking-wider text-secondary uppercase">
             Project-Specific
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Unified <br /><span className="text-magenta-400">Configuration</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Unified <br /><span className="text-secondary">Configuration</span></h2>
           <p className="text-muted text-lg leading-relaxed mb-8">
             Take control of your workflow with <code className="text-text bg-card border border-border px-1 rounded">restartly.json</code>. Define custom watch paths, ignore complex patterns, and execution commands once.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <div className="glass p-4 rounded-2xl text-center">
               <div className="text-xs text-muted/40 mb-1">Debounce</div>
-              <div className="text-magenta-400 font-bold">200ms</div>
+              <div className="text-secondary font-bold">200ms</div>
             </div>
             <div className="glass p-4 rounded-2xl text-center">
               <div className="text-xs text-muted/40 mb-1">Standard</div>
-              <div className="text-magenta-400 font-bold">ESM</div>
+              <div className="text-secondary font-bold">ESM</div>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ const FeatureShowcase = () => {
               </div>
             </div>
             {/* Decorative elements */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-magenta-500/20 rounded-full blur-2xl -z-10"></div>
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary/20 rounded-full blur-2xl -z-10"></div>
           </div>
         </div>
       </section>

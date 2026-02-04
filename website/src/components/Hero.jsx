@@ -98,7 +98,7 @@ const Hero = () => {
             <div className="space-y-1">
               <p><span className="text-blue-400">ℹ</span> <span className="text-text">Starting: node server.js</span></p>
               <p><span className="text-green-400">✔</span> <span className="text-text">Watching paths: .</span></p>
-              <p><span className="text-magenta-400">↺</span> <span className="text-magenta-400">Reloading automatically...</span></p>
+              <p><span className="text-secondary">↺</span> <span className="text-secondary">Reloading automatically...</span></p>
             </div>
           </div>
         </div>

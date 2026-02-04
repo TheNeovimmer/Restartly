@@ -2,7 +2,7 @@
 
 @theme {
   --color-primary: #00cfd5;
-  --color-secondary: #ff00ff;
+  --color-secondary: #017eff;
   --color-bg: var(--bg);
   --color-card: var(--card);
   --color-text: var(--text);
@@ -57,13 +57,13 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #00cfd5 0%, #ff00ff 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-gradient {
-  background: linear-gradient(135deg, #00cfd5 0%, #ff00ff 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
 }
 
 .animate-float {
