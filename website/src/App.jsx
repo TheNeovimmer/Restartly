@@ -41,7 +41,7 @@ const ScrollToTop = () => {
 function App() {
   return (
     <ThemeProvider>
-      <ReactLenis root>
+      <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
         <Router>
           <ScrollToTop />
           <div className="min-h-screen bg-bg text-text selection:bg-primary/30 selection:text-primary transition-colors duration-300 overflow-x-hidden">

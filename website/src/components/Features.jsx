@@ -164,7 +164,7 @@ const Features = () => {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: container.current,
-        start: 'top 75%',
+        start: 'top 85%',
       }
     });
     
