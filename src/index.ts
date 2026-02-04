@@ -97,23 +97,27 @@ program
           const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
           const deps = { ...pkg.dependencies, ...pkg.devDependencies };
           
-          // Check known frameworks
-          for (const [fw, cmd] of Object.entries(FRAMEWORK_COMMANDS)) {
-            if (deps[fw] || deps[`@${fw}/core`] || deps[`@${fw}/cli`]) {
-              logger.info(`Detected ${fw} project. Suggested command: ${cmd}`);
+          // 1. Check scripts FIRST (User config > Defaults)
+          if (pkg.scripts) {
+            if (pkg.scripts.dev) {
+              const cmd = isBun ? 'bun dev' : 'npm run dev';
+              logger.info(`Detected "dev" script in package.json. Suggested command: ${cmd}`);
               finalExec = cmd;
-              break;
+            } else if (pkg.scripts.start) {
+              const cmd = isBun ? 'bun start' : 'npm start';
+              logger.info(`Detected "start" script in package.json. Suggested command: ${cmd}`);
+              finalExec = cmd;
             }
           }
 
-          // fallback to scripts if no framework matched but dev/start exists
-          if (!finalExec && pkg.scripts) {
-            if (pkg.scripts.dev) {
-              logger.info('Detected "dev" script in package.json. Suggested command: npm run dev');
-              finalExec = isBun ? 'bun dev' : 'npm run dev';
-            } else if (pkg.scripts.start) {
-              logger.info('Detected "start" script in package.json. Suggested command: npm start');
-              finalExec = isBun ? 'bun start' : 'npm start';
+          // 2. Check known frameworks (only if no script found)
+          if (!finalExec) {
+            for (const [fw, cmd] of Object.entries(FRAMEWORK_COMMANDS)) {
+              if (deps[fw] || deps[`@${fw}/core`] || deps[`@${fw}/cli`]) {
+                logger.info(`Detected ${fw} project. Suggested command: ${cmd}`);
+                finalExec = cmd;
+                break;
+              }
             }
           }
         } catch (e) {

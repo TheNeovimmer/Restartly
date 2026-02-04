@@ -2,7 +2,7 @@
 
 # ↺ Restartly Ultra
 
-### **The Premium Automatic Reload Tool for Modern Developers**
+### **v1.3.0 - The Premium Automatic Reload Tool for Modern Developers**
 
 [![npm version](https://img.shields.io/npm/v/restartly.svg?style=for-the-badge&color=00cfd5)](https://www.npmjs.com/package/restartly)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
