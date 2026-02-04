@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
-const UsageExample = ({ title, cmd, description }) => (
-  <div className="bg-white/2 border border-white/10 rounded-2xl p-6 hover:bg-white/5 transition-all">
+gsap.registerPlugin(ScrollTrigger);
+
+const UsageExample = ({ title, cmd, description, itemRef }) => (
+  <div ref={itemRef} className="bg-white/2 border border-white/10 rounded-2xl p-6 hover:bg-white/5 transition-all opacity-0">
     <h4 className="text-white font-semibold mb-2">{title}</h4>
     <p className="text-white/40 text-sm mb-4">{description}</p>
     <div className="bg-black/40 rounded-xl p-4 font-mono text-sm text-primary border border-white/5">
@@ -12,37 +17,83 @@ const UsageExample = ({ title, cmd, description }) => (
 );
 
 const Usage = () => {
+  const container = useRef();
+  const leftCol = useRef();
+  const rightCol = useRef();
+  const exampleRefs = useRef([]);
+  exampleRefs.current = [];
+
+  const addToRefs = (el) => {
+    if (el && !exampleRefs.current.includes(el)) {
+      exampleRefs.current.push(el);
+    }
+  };
+
+  useGSAP(() => {
+    gsap.from(leftCol.current, {
+      x: -30,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: leftCol.current,
+        start: 'top 80%',
+      }
+    });
+
+    gsap.from(rightCol.current, {
+      x: 30,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: rightCol.current,
+        start: 'top 80%',
+      }
+    });
+
+    gsap.to(exampleRefs.current, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: leftCol.current,
+        start: 'top 70%',
+      }
+    });
+
+    gsap.set(exampleRefs.current, { y: 20, opacity: 0 });
+  }, { scope: container });
+
   return (
-    <section id="usage" className="py-24 bg-white/1">
+    <section ref={container} id="usage" className="py-24 bg-white/1 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <div ref={leftCol}>
             <h2 className="text-3xl md:text-5xl font-bold mb-8">Simple yet powerful</h2>
             <p className="text-white/50 text-lg mb-10 leading-relaxed">
-              Restartly uses intuitive CLI flags that make it easy to configure your development environment 
-              exactly how you need it. No complex config files, just clean commands.
+              Whether you prefer CLI flags or a dedicated <code className="text-primary bg-primary/10 px-1 rounded">restartly.json</code> file, configuring your environment has never been more intuitive.
             </p>
             
             <div className="space-y-6">
               <UsageExample 
+                itemRef={addToRefs}
                 title="Watch specific directories"
                 description="Monitor only the paths that matter for your current work."
                 cmd="restartly app.js -w src lib"
               />
               <UsageExample 
+                itemRef={addToRefs}
                 title="Ignore noisy patterns"
                 description="Keep your console clean by ignoring logs or temporary files."
                 cmd='restartly app.js -i "**/logs/*" "**/*.tmp"'
               />
               <UsageExample 
-                title="Custom execution command"
-                description="Run Python, Go, or any other runtime with ease."
-                cmd='restartly -x "python3 main.py"'
+                itemRef={addToRefs}
+                title="Zero-Config Mode"
+                description="Just run restartly and let it find your entry point automatically."
+                cmd='restartly'
               />
             </div>
           </div>
           
-          <div className="relative">
+          <div ref={rightCol} className="relative">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full" />
             <div className="glass rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl">
               <h3 className="text-2xl font-bold mb-8">CLI Reference</h3>
@@ -80,10 +131,9 @@ const Usage = () => {
                 <div className="pt-8">
                   <div className="bg-primary/10 border border-primary/20 rounded-2xl p-6 text-sm">
                     <p className="text-white/80 leading-relaxed italic">
-                      "I needed a tool that was faster and looked better 
-                      in my terminal. Restartly is exactly that."
+                      "Upgrade to V1.1.0 and feel the difference. From Zero-Config to unified settings, we've got you covered."
                     </p>
-                    <div className="mt-4 font-bold text-primary">— @TheNeovimmer</div>
+                    <div className="mt-4 font-bold text-primary">— Restartly Team</div>
                   </div>
                 </div>
               </div>

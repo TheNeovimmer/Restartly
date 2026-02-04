@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from './Hero';
 import Features from './Features';
+import FeatureShowcase from './FeatureShowcase';
 import Usage from './Usage';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <Hero />
       <Features />
+      <FeatureShowcase />
       <Usage />
       
       {/* Simple Newsletter/CTA */}
