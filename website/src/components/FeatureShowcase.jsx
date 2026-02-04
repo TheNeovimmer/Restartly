@@ -40,7 +40,7 @@ const FeatureShowcase = () => {
   }, { scope: container });
 
   return (
-    <div ref={container} className="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16 md:space-y-32">
+    <div ref={container} className="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16 md:space-y-32 overflow-hidden">
       {/* Auto-Detection Showcase */}
       <section ref={section1} className="flex flex-col lg:flex-row items-center gap-16">
         <div className="content lg:w-1/2">

@@ -43,7 +43,7 @@ function App() {
       <ReactLenis root>
         <Router>
           <ScrollToTop />
-          <div className="min-h-screen bg-bg text-text selection:bg-primary/30 selection:text-primary transition-colors duration-300">
+          <div className="min-h-screen bg-bg text-text selection:bg-primary/30 selection:text-primary transition-colors duration-300 overflow-x-hidden">
             <Navbar />
             <main>
               <Routes>

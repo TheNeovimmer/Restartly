@@ -37,7 +37,7 @@ const Hero = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative pt-32 pb-20 overflow-hidden">
+    <section ref={container} className="relative pt-32 pb-20 overflow-x-hidden">
       {/* Background Glows */}
       <div ref={glow1Ref} className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/20 rounded-full blur-[80px] md:blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
       <div ref={glow2Ref} className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-secondary/10 rounded-full blur-[80px] md:blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2" />
