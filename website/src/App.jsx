@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import CustomCursor from './components/CustomCursor';
 import Home from './components/Home';
 import Docs from './components/Docs';
 import Footer from './components/Footer';
@@ -45,6 +46,8 @@ function App() {
           <ScrollToTop />
           <div className="min-h-screen bg-bg text-text selection:bg-primary/30 selection:text-primary transition-colors duration-300 overflow-x-hidden">
             <Navbar />
+            <CustomCursor />
+
             <main>
               <Routes>
                 <Route path="/" element={<Home />} />

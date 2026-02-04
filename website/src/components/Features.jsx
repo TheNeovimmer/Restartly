@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,6 +101,7 @@ const FeatureCard = ({ Visual, title, description, cardRef }) => (
 );
 
 const Features = () => {
+  const { t } = useTranslation();
   const container = useRef();
   const titleRef = useRef();
   const cardRefs = useRef([]);
@@ -114,33 +116,33 @@ const Features = () => {
   const features = [
     {
       Visual: UniversalVisual,
-      title: "Universal Support",
-      description: "V1.3.2 Native support for Bun and Node.js. Automatically switches runtimes based on your project structure."
+      title: t('features.cards.universal.title'),
+      description: t('features.cards.universal.description')
     },
     {
       Visual: CliVisual,
-      title: "Interactive CLI",
-      description: "Type 'rs' to restart manually or use '--list' to see all available commands and flags instantly."
+      title: t('features.cards.cli.title'),
+      description: t('features.cards.cli.description')
     },
     {
       Visual: FrameworkVisual,
-      title: "Framework Savvy",
-      description: "Intelligent auto-detection for Hono, Next.js, Remix, Astro, and more. It knows how to start your app better than you do."
+      title: t('features.cards.framework.title'),
+      description: t('features.cards.framework.description')
     },
     {
       Visual: EnvVisual,
-      title: "Environment Ready",
-      description: "Built-in .env support via dotenv. Your secrets are automatically injected into your development process."
+      title: t('features.cards.env.title'),
+      description: t('features.cards.env.description')
     },
     {
       Visual: DebounceVisual,
-      title: "Smart Debouncing",
-      description: "Intelligently groups rapid-fire file changes to prevent redundant restarts and keep your focus sharp."
+      title: t('features.cards.debounce.title'),
+      description: t('features.cards.debounce.description')
     },
     {
       Visual: RunnerVisual,
-      title: "Reliable Runner",
-      description: "Advanced child process management with custom signal handling (SIGTERM/SIGKILL) for a tidy environment."
+      title: t('features.cards.runner.title'),
+      description: t('features.cards.runner.description')
     }
   ];
 
@@ -173,9 +175,9 @@ const Features = () => {
   return (
     <section ref={container} id="features" className="py-24 max-w-7xl mx-auto px-6">
       <div className="text-center mb-16">
-        <h2 ref={titleRef} className="text-3xl md:text-5xl font-bold mb-6">Ultra Capabilities</h2>
+        <h2 ref={titleRef} className="text-3xl md:text-5xl font-bold mb-6">{t('features.title')}</h2>
         <p className="text-muted text-lg max-w-2xl mx-auto">
-          Restartly V1.3.2 brings a new level of automation and style to your daily workflow.
+          {t('features.subtitle')}
         </p>
       </div>
       

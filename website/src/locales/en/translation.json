@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "Home",
+    "docs": "Documentation",
+    "github": "GitHub"
+  },
+  "home": {
+    "cta_title": "Ready to upgrade your workflow?",
+    "cta_subtitle": "Join thousands of developers who are building faster with Restartly.\nFree, open-source, and always will be.",
+    "cta_button_star": "Star on GitHub",
+    "cta_button_docs": "Read the Docs"
+  },
+  "hero": {
+    "badge": "Meet the new standard for Node.js development",
+    "title_start": "Develop faster with",
+    "subtitle": "A high-performance, developer-friendly automatic reload tool.\nBuilt for speed, styled for impact, and designed for <b>Node.js & Bun</b>.",
+    "get_started": "Get Started",
+    "terminal": {
+      "detected": "Detected Bun project. Using \"bun\" runtime.",
+      "starting": "Starting: bun run server.ts",
+      "watching": "Watching paths: .",
+      "reloading": "Reloading automatically..."
+    }
+  },
+  "features": {
+    "title": "Ultra Capabilities",
+    "subtitle": "Restartly V1.3.2 brings a new level of automation and style to your daily workflow.",
+    "cards": {
+      "universal": {
+        "title": "Universal Support",
+        "description": "V1.3.2 Native support for Bun and Node.js. Automatically switches runtimes based on your project structure."
+      },
+      "cli": {
+        "title": "Interactive CLI",
+        "description": "Type 'rs' to restart manually or use '--list' to see all available commands and flags instantly."
+      },
+      "framework": {
+        "title": "Framework Savvy",
+        "description": "Intelligent auto-detection for Hono, Next.js, Remix, Astro, and more. It knows how to start your app better than you do."
+      },
+      "env": {
+        "title": "Environment Ready",
+        "description": "Built-in .env support via dotenv. Your secrets are automatically injected into your development process."
+      },
+      "debounce": {
+        "title": "Smart Debouncing",
+        "description": "Intelligently groups rapid-fire file changes to prevent redundant restarts and keep your focus sharp."
+      },
+      "runner": {
+        "title": "Reliable Runner",
+        "description": "Advanced child process management with custom signal handling (SIGTERM/SIGKILL) for a tidy environment."
+      }
+    }
+  },
+  "showcase": {
+    "universal": {
+      "badge": "Universal Intelligence",
+      "title_start": "Zero-Config",
+      "title_end": "Framework Magic",
+      "description": "Restartly V1.3.2 is built for the modern web. It intelligently detects your framework and runtime—whether it's Bun, Hono, Next.js, or Remix—and handles the execution so you don't have to.",
+      "detected": "detected",
+      "terminal": {
+        "detected": "Detected Bun project. Using \"bun\" runtime.",
+        "starting": "Starting: bun run server.ts",
+        "watching": "Watching paths: ."
+      }
+    },
+    "config": {
+      "badge": "Project-Specific",
+      "title_start": "Unified",
+      "title_end": "Configuration",
+      "description": "Take control of your workflow with <0>restartly.json</0>. Define custom watch paths, ignore complex patterns, and execution commands once.",
+      "card_debounce": "Debounce",
+      "card_standard": "Standard"
+    }
+  },
+  "usage": {
+    "title": "Simple yet powerful",
+    "subtitle": "Whether you prefer CLI flags or a dedicated <0>restartly.json</0> file, configuring your environment has never been more intuitive.",
+    "examples": {
+      "watch": {
+        "title": "Watch specific directories",
+        "description": "Monitor only the paths that matter for your current work."
+      },
+      "ignore": {
+        "title": "Ignore noisy patterns",
+        "description": "Keep your console clean by ignoring logs or temporary files."
+      },
+      "zero": {
+        "title": "Zero-Config Mode",
+        "description": "Just run restartly and let it find your entry point automatically."
+      }
+    },
+    "cli": {
+      "title": "CLI Reference",
+      "quote": "\"Upgrade to V1.1.0 and feel the difference. From Zero-Config to unified settings, we've got you covered.\"",
+      "team": "Restartly Team"
+    }
+  },
+  "footer": {
+    "rights": "Restartly. <br /> Open source under MIT License.",
+    "designed_by": "Designed and built by"
+  },
+  "docs": {
+    "title": "Documentation",
+    "subtitle": "Everything you need to install, configure, and master Restartly for your development workflow.",
+    "intro": "Start watching",
+    "note": "Note:",
+    "note_text": "Restartly will automatically detect changes in your current directory and reload the process.",
+    "nav": {
+      "getting_started": "Getting Started",
+      "installation": "Installation",
+      "quick_start": "Quick Start",
+      "configuration": "Configuration",
+      "cli_flags": "CLI Flags",
+      "watch_paths": "Watch Paths",
+      "ignore_patterns": "Ignore Patterns",
+      "advanced": "Advanced",
+      "interactive": "Interactive Commands",
+      "env_vars": "Environment Variables",
+      "custom_exec": "Custom Execution",
+      "debouncing": "Debouncing"
+    },
+    "installation": {
+      "title": "Installation",
+      "description": "Restartly is designed to be lightweight and easy to install. You can add it globally to your system or use it as a development dependency in your project.",
+      "global": "Global Installation",
+      "global_term": "Terminal",
+      "local": "Local Installation",
+      "local_term": "Terminal"
+    },
+    "quick_start": {
+      "title": "Quick Start",
+      "description": "Once installed, you can start watching your application by passing the entry point script to the <0>restartly</0> command."
+    },
+    "cli_flags": {
+      "title": "CLI Flags",
+      "description": "Restartly provides a set of flags to customize its behavior. You can combine multiple flags to suit your development workflow.",
+      "watch_desc": "Files or directories to watch",
+      "ignore_desc": "Patterns to ignore",
+      "exec_desc": "Execution command",
+      "delay_desc": "Restart delay in ms",
+      "signal_desc": "Kill signal"
+    },
+    "watch_paths": {
+      "title": "Watch Paths",
+      "description": "By default, Restartly watches the current working directory. If you need to watch specific folders, use the <0>--watch</0> flag.",
+      "term_title": "Watch specific folders"
+    },
+    "ignore_patterns": {
+      "title": "Ignore Patterns",
+      "description": "To prevent unnecessary reloads, you can ignore certain files or directories. This is useful for temporary files, logs, or coverage reports.",
+      "term_title": "Ignore patterns"
+    },
+    "interactive": {
+      "title": "Interactive Commands",
+      "description": "Restartly v1.3.0 introduces interactive terminal commands. While Restartly is running, you can interact with it directly from your terminal.",
+      "watching": "Watching for changes...",
+      "manual": "// Type 'rs' and enter to restart manually"
+    }
+  }
+}

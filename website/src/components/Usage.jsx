@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { useTranslation, Trans } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +18,7 @@ const UsageExample = ({ title, cmd, description, itemRef }) => (
 );
 
 const Usage = () => {
+  const { t } = useTranslation();
   const container = useRef();
   const leftCol = useRef();
   const rightCol = useRef();
@@ -66,28 +68,28 @@ const Usage = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div ref={leftCol}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">Simple yet powerful</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">{t('usage.title')}</h2>
             <p className="text-muted text-lg mb-10 leading-relaxed">
-              Whether you prefer CLI flags or a dedicated <code className="text-primary bg-primary/10 px-1 rounded">restartly.json</code> file, configuring your environment has never been more intuitive.
+              <Trans i18nKey="usage.subtitle" components={[<code className="text-primary bg-primary/10 px-1 rounded" />]} />
             </p>
             
             <div className="space-y-6">
               <UsageExample 
                 itemRef={addToRefs}
-                title="Watch specific directories"
-                description="Monitor only the paths that matter for your current work."
+                title={t('usage.examples.watch.title')}
+                description={t('usage.examples.watch.description')}
                 cmd="restartly app.js -w src lib"
               />
               <UsageExample 
                 itemRef={addToRefs}
-                title="Ignore noisy patterns"
-                description="Keep your console clean by ignoring logs or temporary files."
+                title={t('usage.examples.ignore.title')}
+                description={t('usage.examples.ignore.description')}
                 cmd='restartly app.js -i "**/logs/*" "**/*.tmp"'
               />
               <UsageExample 
                 itemRef={addToRefs}
-                title="Zero-Config Mode"
-                description="Just run restartly and let it find your entry point automatically."
+                title={t('usage.examples.zero.title')}
+                description={t('usage.examples.zero.description')}
                 cmd='restartly'
               />
             </div>
@@ -96,7 +98,7 @@ const Usage = () => {
           <div ref={rightCol} className="relative">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full" />
             <div className="glass rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl">
-              <h3 className="text-2xl font-bold mb-8">CLI Reference</h3>
+              <h3 className="text-2xl font-bold mb-8">{t('usage.cli.title')}</h3>
               <div className="space-y-8">
                 <div>
                   <div className="flex justify-between items-center mb-2">
@@ -131,9 +133,9 @@ const Usage = () => {
                 <div className="pt-8">
                   <div className="bg-primary/10 border border-primary/20 rounded-2xl p-6 text-sm">
                     <p className="text-text opacity-80 leading-relaxed italic">
-                      "Upgrade to V1.1.0 and feel the difference. From Zero-Config to unified settings, we've got you covered."
+                      {t('usage.cli.quote')}
                     </p>
-                    <div className="mt-4 font-bold text-primary">— Restartly Team</div>
+                    <div className="mt-4 font-bold text-primary">— {t('usage.cli.team')}</div>
                   </div>
                 </div>
               </div>

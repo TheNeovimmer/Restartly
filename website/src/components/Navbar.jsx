@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border px-6 py-4 transition-colors duration-300">
@@ -14,19 +20,33 @@ const Navbar = () => {
         </Link>
         <div className="flex items-center space-x-4">
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-sm font-medium text-muted hover:text-primary transition-colors">Home</Link>
-            <Link to="/docs" className="text-sm font-medium text-muted hover:text-primary transition-colors">Documentation</Link>
+            <Link to="/" className="text-sm font-medium text-muted hover:text-primary transition-colors">{t('nav.home')}</Link>
+            <Link to="/docs" className="text-sm font-medium text-muted hover:text-primary transition-colors">{t('nav.docs')}</Link>
             <a 
               href="https://github.com/theneovimmer/restartly" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium px-4 py-2 rounded-full border border-border hover:border-primary/50 transition-all hover:bg-white/5 text-text"
             >
-              GitHub
+              {t('nav.github')}
             </a>
           </div>
           
           <div className="flex items-center space-x-2">
+            <div className="flex items-center border border-border rounded-lg overflow-hidden mr-2">
+                <button 
+                  onClick={() => changeLanguage('en')}
+                  className={`px-2 py-1 text-xs font-medium transition-colors ${i18n.language === 'en' ? 'bg-primary text-bg' : 'text-muted hover:text-text'}`}
+                >
+                  EN
+                </button>
+                <button 
+                  onClick={() => changeLanguage('fr')}
+                  className={`px-2 py-1 text-xs font-medium transition-colors ${i18n.language === 'fr' ? 'bg-primary text-bg' : 'text-muted hover:text-text'}`}
+                >
+                  FR
+                </button>
+            </div>
             <ThemeToggle />
             
             {/* Hamburger Button */}
@@ -53,14 +73,14 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className="text-lg font-medium text-text hover:text-primary transition-colors"
           >
-            Home
+            {t('nav.home')}
           </Link>
           <Link 
             to="/docs" 
             onClick={() => setIsOpen(false)}
             className="text-lg font-medium text-text hover:text-primary transition-colors"
           >
-            Documentation
+            {t('nav.docs')}
           </Link>
           <a 
             href="https://github.com/theneovimmer/restartly" 
@@ -68,7 +88,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="text-lg font-medium text-text hover:text-primary transition-colors"
           >
-            GitHub
+            {t('nav.github')}
           </a>
         </div>
       </div>

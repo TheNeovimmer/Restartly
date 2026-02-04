@@ -2,10 +2,12 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { useTranslation, Trans } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FeatureShowcase = () => {
+  const { t } = useTranslation();
   const container = useRef();
   const section1 = useRef();
   const section2 = useRef();
@@ -45,18 +47,18 @@ const FeatureShowcase = () => {
       <section ref={section1} className="flex flex-col lg:flex-row items-center gap-16">
         <div className="content lg:w-1/2">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold tracking-wider text-blue-400 uppercase">
-            Universal Intelligence
+            {t('showcase.universal.badge')}
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Zero-Config <br /><span className="text-blue-400">Framework Magic</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">{t('showcase.universal.title_start')} <br /><span className="text-blue-400">{t('showcase.universal.title_end')}</span></h2>
           <p className="text-muted text-lg leading-relaxed mb-8">
-            Restartly V1.3.2 is built for the modern web. It intelligently detects your framework and runtime—whether it's Bun, Hono, Next.js, or Remix—and handles the execution so you don't have to.
+            {t('showcase.universal.description')}
           </p>
           <ul className="space-y-4">
             {['bun.lockb', 'server.ts', 'app.js', 'main.ts'].map((file, i) => (
               <li key={i} className="flex items-center space-x-3 text-text">
                 <span className="text-blue-400">✔</span>
                 <code className="bg-card px-2 py-1 rounded text-sm border border-border">{file}</code>
-                <span className="text-muted/40 font-mono text-xs">detected</span>
+                <span className="text-muted/40 font-mono text-xs">{t('showcase.universal.detected')}</span>
               </li>
             ))}
           </ul>
@@ -68,9 +70,9 @@ const FeatureShowcase = () => {
                 <span>$</span>
                 <span>restartly</span>
               </div>
-              <div className="text-blue-400">ℹ Detected Bun project. Using "bun" runtime.</div>
-              <div className="text-blue-400">ℹ Starting: bun run server.ts</div>
-              <div className="text-green-400">✔ Watching paths: .</div>
+              <div className="text-blue-400">ℹ {t('showcase.universal.terminal.detected')}</div>
+              <div className="text-blue-400">ℹ {t('showcase.universal.terminal.starting')}</div>
+              <div className="text-green-400">✔ {t('showcase.universal.terminal.watching')}</div>
               <div className="animate-pulse flex space-x-2">
                 <div className="h-4 w-1 bg-muted/40"></div>
                 <div className="h-4 w-32 bg-card rounded border border-border"></div>
@@ -87,19 +89,19 @@ const FeatureShowcase = () => {
       <section ref={section2} className="flex flex-col lg:flex-row-reverse items-center gap-16">
         <div className="content lg:w-1/2">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary/10 border border-secondary/20 text-xs font-semibold tracking-wider text-secondary uppercase">
-            Project-Specific
+             {t('showcase.config.badge')}
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">Unified <br /><span className="text-secondary">Configuration</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-text">{t('showcase.config.title_start')} <br /><span className="text-secondary">{t('showcase.config.title_end')}</span></h2>
           <p className="text-muted text-lg leading-relaxed mb-8">
-            Take control of your workflow with <code className="text-text bg-card border border-border px-1 rounded">restartly.json</code>. Define custom watch paths, ignore complex patterns, and execution commands once.
+            <Trans i18nKey="showcase.config.description" components={[<code className="text-text bg-card border border-border px-1 rounded" />]} />
           </p>
           <div className="grid grid-cols-2 gap-4">
             <div className="glass p-4 rounded-2xl text-center">
-              <div className="text-xs text-muted/40 mb-1">Debounce</div>
+              <div className="text-xs text-muted/40 mb-1">{t('showcase.config.card_debounce')}</div>
               <div className="text-secondary font-bold">200ms</div>
             </div>
             <div className="glass p-4 rounded-2xl text-center">
-              <div className="text-xs text-muted/40 mb-1">Standard</div>
+              <div className="text-xs text-muted/40 mb-1">{t('showcase.config.card_standard')}</div>
               <div className="text-secondary font-bold">ESM</div>
             </div>
           </div>

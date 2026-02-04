@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const container = useRef();
   const titleRef = useRef();
   const descRef = useRef();
@@ -44,17 +46,16 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-6 text-center">
         <div ref={badgeRef} className="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-border text-xs font-semibold tracking-wider text-primary uppercase">
-          Meet the new standard for Node.js development
+          {t('hero.badge')}
         </div>
         
         <h1 ref={titleRef} className="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight text-text">
-          Develop faster with <br />
+          {t('hero.title_start')} <br />
           <span className="text-gradient">Restartly</span>
         </h1>
         
         <p ref={descRef} className="max-w-2xl mx-auto text-lg md:text-xl text-muted mb-12">
-          A high-performance, developer-friendly automatic reload tool. 
-          Built for speed, styled for impact, and designed for <b>Node.js & Bun</b>.
+          <Trans i18nKey="hero.subtitle" components={{ b: <b /> }} />
         </p>
 
         <div ref={actionsRef} className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -74,7 +75,7 @@ const Hero = () => {
             to="/docs" 
             className="px-8 py-4 rounded-xl bg-gradient text-white font-bold hover:shadow-[0_0_20px_rgba(0,207,213,0.4)] transition-all transform hover:scale-105"
           >
-            Get Started
+            {t('hero.get_started')}
           </Link>
         </div>
 
@@ -96,10 +97,10 @@ const Hero = () => {
   ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝   ╚═╝   `}
             </pre>
             <div className="space-y-1">
-              <p><span className="text-blue-400">ℹ</span> <span className="text-text">Detected Bun project. Using "bun" runtime.</span></p>
-              <p><span className="text-blue-400">ℹ</span> <span className="text-text">Starting: bun run server.ts</span></p>
-              <p><span className="text-green-400">✔</span> <span className="text-text">Watching paths: .</span></p>
-              <p><span className="text-secondary">↺</span> <span className="text-secondary">Reloading automatically...</span></p>
+              <p><span className="text-blue-400">ℹ</span> <span className="text-text">{t('hero.terminal.detected')}</span></p>
+              <p><span className="text-blue-400">ℹ</span> <span className="text-text">{t('hero.terminal.starting')}</span></p>
+              <p><span className="text-green-400">✔</span> <span className="text-text">{t('hero.terminal.watching')}</span></p>
+              <p><span className="text-secondary">↺</span> <span className="text-secondary">{t('hero.terminal.reloading')}</span></p>
             </div>
           </div>
         </div>

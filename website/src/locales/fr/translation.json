@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "docs": "Documentation",
+    "github": "GitHub"
+  },
+  "home": {
+    "cta_title": "Prêt à améliorer votre flux de travail ?",
+    "cta_subtitle": "Rejoignez des milliers de développeurs qui construisent plus vite avec Restartly.\nGratuit, open-source, et le sera toujours.",
+    "cta_button_star": "Étoile sur GitHub",
+    "cta_button_docs": "Lire la documentation"
+  },
+  "hero": {
+    "badge": "Découvrez le nouveau standard pour le développement Node.js",
+    "title_start": "Développez plus vite avec",
+    "subtitle": "Un outil de rechargement automatique haute performance et convivial.\nConçu pour la vitesse, stylé pour l'impact, et pensé pour <b>Node.js & Bun</b>.",
+    "get_started": "Commencer",
+    "terminal": {
+      "detected": "Projet Bun détecté. Utilisation du runtime \"bun\".",
+      "starting": "Démarrage : bun run server.ts",
+      "watching": "Surveillance des chemins : .",
+      "reloading": "Rechargement automatique..."
+    }
+  },
+  "features": {
+    "title": "Capacités Ultra",
+    "subtitle": "Restartly V1.3.2 apporte un nouveau niveau d'automatisation et de style à votre flux de travail quotidien.",
+    "cards": {
+      "universal": {
+        "title": "Support Universel",
+        "description": "Support natif V1.3.2 pour Bun et Node.js. Change automatiquement de runtime en fonction de la structure de votre projet."
+      },
+      "cli": {
+        "title": "CLI Interactif",
+        "description": "Tapez 'rs' pour redémarrer manuellement ou utilisez '--list' pour voir instantanément toutes les commandes et drapeaux disponibles."
+      },
+      "framework": {
+        "title": "Framework Intelligent",
+        "description": "Détection automatique intelligente pour Hono, Next.js, Remix, Astro, et plus. Il sait comment démarrer votre application mieux que vous."
+      },
+      "env": {
+        "title": "Prêt pour l'Environnement",
+        "description": "Support .env intégré via dotenv. Vos secrets sont automatiquement injectés dans votre processus de développement."
+      },
+      "debounce": {
+        "title": "Debouncing Intelligent",
+        "description": "Regroupe intelligemment les changements de fichiers rapides pour éviter les redémarrages redondants et garder votre concentration."
+      },
+      "runner": {
+        "title": "Exécuteur Fiable",
+        "description": "Gestion avancée des processus enfants avec gestion personnalisée des signaux (SIGTERM/SIGKILL) pour un environnement propre."
+      }
+    }
+  },
+  "showcase": {
+    "universal": {
+      "badge": "Intelligence Universelle",
+      "title_start": "Zéro-Configuration",
+      "title_end": "Magie du Framework",
+      "description": "Restartly V1.3.2 est conçu pour le web moderne. Il détecte intelligemment votre framework et runtime—que ce soit Bun, Hono, Next.js, ou Remix—et gère l'exécution pour que vous n'ayez pas à le faire.",
+      "detected": "détecté",
+      "terminal": {
+        "detected": "Projet Bun détecté. Utilisation du runtime \"bun\".",
+        "starting": "Démarrage : bun run server.ts",
+        "watching": "Surveillance des chemins : ."
+      }
+    },
+    "config": {
+      "badge": "Projet-Spécifique",
+      "title_start": "Configuration",
+      "title_end": "Unifiée",
+      "description": "Prenez le contrôle de votre flux de travail avec <0>restartly.json</0>. Définissez des chemins de surveillance personnalisés, ignorez des modèles complexes et des commandes d'exécution une seule fois.",
+      "card_debounce": "Debounce",
+      "card_standard": "Standard"
+    }
+  },
+  "usage": {
+    "title": "Simple mais puissant",
+    "subtitle": "Que vous préfériez les drapeaux CLI ou un fichier <0>restartly.json</0> dédié, configurer votre environnement n'a jamais été aussi intuitif.",
+    "examples": {
+      "watch": {
+        "title": "Surveiller des répertoires spécifiques",
+        "description": "Ne surveillez que les chemins qui comptent pour votre travail actuel."
+      },
+      "ignore": {
+        "title": "Ignorer les modèles bruyants",
+        "description": "Gardez votre console propre en ignorant les journaux ou les fichiers temporaires."
+      },
+      "zero": {
+        "title": "Mode Zéro-Configuration",
+        "description": "Lancez simplement restartly et laissez-le trouver votre point d'entrée automatiquement."
+      }
+    },
+    "cli": {
+      "title": "Référence CLI",
+      "quote": "\"Passez à la V1.1.0 et ressentez la différence. Du Zéro-Configuration aux paramètres unifiés, nous avons tout prévu.\"",
+      "team": "L'équipe Restartly"
+    }
+  },
+  "footer": {
+    "rights": "Restartly. <br /> Open source sous licence MIT.",
+    "designed_by": "Conçu et construit par"
+  },
+  "docs": {
+    "title": "Documentation",
+    "subtitle": "Tout ce dont vous avez besoin pour installer, configurer et maîtriser Restartly pour votre flux de développement.",
+    "intro": "Commencer à surveiller",
+    "note": "Note:",
+    "note_text": "Restartly détectera automatiquement les changements dans votre répertoire actuel et rechargera le processus.",
+    "nav": {
+      "getting_started": "Pour Commencer",
+      "installation": "Installation",
+      "quick_start": "Démarrage Rapide",
+      "configuration": "Configuration",
+      "cli_flags": "Drapeaux CLI",
+      "watch_paths": "Chemins à Surveiller",
+      "ignore_patterns": "Modèles à Ignorer",
+      "advanced": "Avancé",
+      "interactive": "Commandes Interactives",
+      "env_vars": "Variables d'Environnement",
+      "custom_exec": "Exécution Personnalisée",
+      "debouncing": "Debouncing"
+    },
+    "installation": {
+      "title": "Installation",
+      "description": "Restartly est conçu pour être léger et facile à installer. Vous pouvez l'ajouter globalement à votre système ou l'utiliser comme dépendance de développement dans votre projet.",
+      "global": "Installation Globale",
+      "global_term": "Terminal",
+      "local": "Installation Locale",
+      "local_term": "Terminal"
+    },
+    "quick_start": {
+      "title": "Démarrage Rapide",
+      "description": "Une fois installé, vous pouvez commencer à surveiller votre application en passant le script du point d'entrée à la commande <0>restartly</0>."
+    },
+    "cli_flags": {
+      "title": "Drapeaux CLI",
+      "description": "Restartly fournit un ensemble de drapeaux pour personnaliser son comportement. Vous pouvez combiner plusieurs drapeaux pour adapter votre flux de travail.",
+      "watch_desc": "Fichiers ou répertoires à surveiller",
+      "ignore_desc": "Modèles à ignorer",
+      "exec_desc": "Commande d'exécution",
+      "delay_desc": "Délai de redémarrage en ms",
+      "signal_desc": "Signal d'arrêt"
+    },
+    "watch_paths": {
+      "title": "Chemins à Surveiller",
+      "description": "Par défaut, Restartly surveille le répertoire de travail actuel. Si vous devez surveiller des dossiers spécifiques, utilisez le drapeau <0>--watch</0>.",
+      "term_title": "Surveiller des dossiers spécifiques"
+    },
+    "ignore_patterns": {
+      "title": "Modèles à Ignorer",
+      "description": "Pour éviter les rechargements inutiles, vous pouvez ignorer certains fichiers ou répertoires. C'est utile pour les fichiers temporaires, les journaux ou les rapports de couverture.",
+      "term_title": "Ignorer des modèles"
+    },
+    "interactive": {
+      "title": "Commandes Interactives",
+      "description": "Restartly v1.3.0 introduit des commandes terminal interactives. Pendant que Restartly fonctionne, vous pouvez interagir directement avec lui depuis votre terminal.",
+      "watching": "Surveillance des changements...",
+      "manual": "// Tapez 'rs' et Entrée pour redémarrer manuellement"
+    }
+  }
+}
