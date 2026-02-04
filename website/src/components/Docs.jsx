@@ -92,7 +92,7 @@ const Docs = () => {
             <DocSection id="quick-start" title="Quick Start">
               <p>Once installed, you can start watching your application by passing the entry point script to the <code>restartly</code> command.</p>
               <CodeBlock code="restartly index.js" />
-              <p>Restartly will start your script and begin watching the current directory for any changes. When a file is modified, the process will be automatically restarted.</p>
+              <p>Restartly will start your script and begin watching the current directory for any changes. When a file is modified, the process will be automatically reloaded.</p>
             </DocSection>
 
             <DocSection id="cli-flags" title="CLI Flags">
@@ -132,20 +132,20 @@ const Docs = () => {
             </DocSection>
 
             <DocSection id="ignore-patterns" title="Ignore Patterns">
-              <p>To prevent unnecessary restarts, you can ignore certain files or directories. This is useful for temporary files, logs, or coverage reports.</p>
+              <p>To prevent unnecessary reloads, you can ignore certain files or directories. This is useful for temporary files, logs, or coverage reports.</p>
               <CodeBlock code="restartly app.js --ignore 'reports/**/*' --ignore 'tmp/*'" />
             </DocSection>
 
             <DocSection id="custom-exec" title="Custom Execution">
-              <p>Restartly isn't limited to Node.js. You can use it to watch and restart any process using the <code>--exec</code> flag.</p>
-              <p>For example, to watch and restart a Python script:</p>
+              <p>Restartly isn't limited to a single runtime. You can use it to watch and reload any process using the <code>--exec</code> flag.</p>
+              <p>For example, to watch and reload a Python script:</p>
               <CodeBlock code='restartly --exec "python3 api.py"' />
               <p>Or even a compiled binary:</p>
               <CodeBlock code='restartly --exec "./my-binary"' />
             </DocSection>
 
             <DocSection id="debouncing" title="Debouncing">
-              <p>When multiple files are saved simultaneously (e.g., during a git pull or an IDE "save all" action), Restartly uses debouncing to avoid flickering and rapid-fire restarts.</p>
+              <p>When multiple files are saved simultaneously (e.g., during a git pull or an IDE "save all" action), Restartly uses debouncing to avoid flickering and rapid-fire reloads.</p>
               <p>The default debounce interval is 200ms, but you can customize it with the <code>--debounce</code> flag.</p>
               <CodeBlock code="restartly app.js --debounce 500" />
             </DocSection>

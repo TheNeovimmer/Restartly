@@ -2,13 +2,13 @@
 
 # Restartly ↺
 
-### A High-Performance, Premium `nodemon` Alternative
+### A High-Performance, Premium Automatic Reload Tool
 
 [![npm version](https://img.shields.io/npm/v/restartly.svg?style=flat-square&color=00cfd5)](https://www.npmjs.com/package/restartly)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-**Restartly** is built for developers who crave a better terminal experience. It's fast, beautiful, and handles process restarts with precision.
+**Restartly** is a next-generation tool built for developers who crave a better terminal experience. It's fast, beautiful, and handles process reloads automatically with precision.
 
 [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [CLI Options](#-cli-options)
 

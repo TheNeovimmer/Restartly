@@ -18,7 +18,7 @@ const Hero = () => {
         </h1>
         
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 mb-12">
-          A high-performance, developer-friendly nodemon alternative. 
+          A high-performance, developer-friendly automatic reload tool. 
           Built for speed, styled for impact, and designed to keep you in the flow.
         </p>
 
@@ -63,7 +63,7 @@ const Hero = () => {
             <div className="space-y-1">
               <p><span className="text-blue-400">ℹ</span> <span className="text-white">Starting: node server.js</span></p>
               <p><span className="text-green-400">✔</span> <span className="text-white">Watching paths: .</span></p>
-              <p><span className="text-magenta-400">↺</span> <span className="text-magenta-400">Restarting due to changes...</span></p>
+              <p><span className="text-magenta-400">↺</span> <span className="text-magenta-400">Reloading automatically...</span></p>
             </div>
           </div>
         </div>

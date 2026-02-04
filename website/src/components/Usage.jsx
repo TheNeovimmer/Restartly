@@ -80,8 +80,8 @@ const Usage = () => {
                 <div className="pt-8">
                   <div className="bg-primary/10 border border-primary/20 rounded-2xl p-6 text-sm">
                     <p className="text-white/80 leading-relaxed italic">
-                      "I needed a tool that was faster than nodemon and looked better 
-                      in my neovim terminal. Restartly is exactly that."
+                      "I needed a tool that was faster and looked better 
+                      in my terminal. Restartly is exactly that."
                     </p>
                     <div className="mt-4 font-bold text-primary">— @TheNeovimmer</div>
                   </div>

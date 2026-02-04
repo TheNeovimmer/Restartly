@@ -15,7 +15,7 @@ ${pc.cyan('                                                  |___/ ')}
 export const logger = {
   banner(): void {
     console.log(banner);
-    console.log(chalk.gray(`  v1.0.0 - A high-performance nodemon alternative\n`));
+    console.log(chalk.gray(`  v1.0.0 - A high-performance automatic reload tool\n`));
   },
 
   info(message: string): void {

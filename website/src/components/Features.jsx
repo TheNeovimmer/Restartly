@@ -51,7 +51,7 @@ const Features = () => {
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold mb-6">Why switch to Restartly?</h2>
         <p className="text-white/50 text-lg max-w-2xl mx-auto">
-          Everything you love about nodemon, but with a faster heart and a better face.
+          A fresh take on developer productivity with a faster heart and a better face.
         </p>
       </div>
       
