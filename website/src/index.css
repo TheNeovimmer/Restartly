@@ -59,6 +59,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Custom Utilities */
@@ -105,6 +106,7 @@ body {
 
 html {
   overflow-x: hidden;
+  overflow-y: auto;
   /* scroll-behavior: smooth; removed to avoid conflict with Lenis */
   scroll-padding-top: 80px; /* Offset for fixed navbar */
 }
