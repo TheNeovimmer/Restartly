@@ -24,11 +24,11 @@
   },
   "features": {
     "title": "Capacités Ultra",
-    "subtitle": "Restartly V1.3.2 apporte un nouveau niveau d'automatisation et de style à votre flux de travail quotidien.",
+    "subtitle": "Restartly V1.3.3 apporte un nouveau niveau d'automatisation et de style à votre flux de travail quotidien.",
     "cards": {
       "universal": {
         "title": "Support Universel",
-        "description": "Support natif V1.3.2 pour Bun et Node.js. Change automatiquement de runtime en fonction de la structure de votre projet."
+        "description": "Support natif V1.3.3 pour Bun et Node.js. Change automatiquement de runtime en fonction de la structure de votre projet."
       },
       "cli": {
         "title": "CLI Interactif",
@@ -36,7 +36,7 @@
       },
       "framework": {
         "title": "Framework Intelligent",
-        "description": "Détection automatique intelligente pour Hono, Next.js, Remix, Astro, et plus. Il sait comment démarrer votre application mieux que vous."
+        "description": "Détection automatique intelligente pour Express, Fastify, Elysia, Next.js, et plus. Il sait comment démarrer votre application mieux que vous."
       },
       "env": {
         "title": "Prêt pour l'Environnement",
@@ -57,7 +57,7 @@
       "badge": "Intelligence Universelle",
       "title_start": "Zéro-Configuration",
       "title_end": "Magie du Framework",
-      "description": "Restartly V1.3.2 est conçu pour le web moderne. Il détecte intelligemment votre framework et runtime—que ce soit Bun, Hono, Next.js, ou Remix—et gère l'exécution pour que vous n'ayez pas à le faire.",
+      "description": "Restartly V1.3.3 est conçu pour le web moderne. Il détecte intelligemment votre framework et runtime—que ce soit Bun, Express, Fastify, ou Elysia—et gère l'exécution pour que vous n'ayez pas à le faire.",
       "detected": "détecté",
       "terminal": {
         "detected": "Projet Bun détecté. Utilisation du runtime \"bun\".",

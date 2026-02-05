@@ -16,7 +16,7 @@ export const logger = {
         if (this.mode === 'quiet')
             return;
         console.log(banner);
-        console.log(chalk.gray(`  v1.3.1 - The Professional Automatic Reload Tool\n`));
+        console.log(chalk.gray(`  v1.3.3 - The Professional Automatic Reload Tool\n`));
     },
     info(message) {
         if (this.mode === 'quiet')

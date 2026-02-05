@@ -10,7 +10,12 @@ import readline from 'readline';
 
 const program = new Command();
 
-const DEFAULT_ENTRY_POINTS = ['index.js', 'server.js', 'app.js', 'main.js', 'index.ts', 'server.ts'];
+const DEFAULT_ENTRY_POINTS = [
+  'index.js', 'server.js', 'app.js', 'main.js', 
+  'index.ts', 'server.ts', 'app.ts', 'main.ts',
+  'src/index.js', 'src/server.js', 'src/app.js', 'src/main.js',
+  'src/index.ts', 'src/server.ts', 'src/app.ts', 'src/main.ts'
+];
 
 const FRAMEWORK_COMMANDS: Record<string, string> = {
   'next': 'next dev',
@@ -31,7 +36,7 @@ const FRAMEWORK_COMMANDS: Record<string, string> = {
 program
   .name('restartly')
   .description('A professional-grade automatic reload tool for Node.js and Bun')
-  .version('1.3.2')
+  .version('1.3.3')
   .argument('[script]', 'Script to run')
   .option('-w, --watch <paths...>', 'Paths to watch')
   .option('-i, --ignore <patterns...>', 'Patterns to ignore')
