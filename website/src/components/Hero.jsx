@@ -39,7 +39,7 @@ const Hero = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative pt-32 pb-20 overflow-x-hidden">
+    <section ref={container} className="relative pt-24 md:pt-32 pb-20 overflow-x-hidden">
       {/* Background Glows */}
       <div ref={glow1Ref} className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/20 rounded-full blur-[80px] md:blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
       <div ref={glow2Ref} className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-secondary/10 rounded-full blur-[80px] md:blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2" />
@@ -80,7 +80,7 @@ const Hero = () => {
         </div>
 
         {/* Mock Terminal Visual */}
-        <div ref={terminalRef} className="mt-20 max-w-4xl mx-auto glass rounded-2xl overflow-hidden shadow-2xl">
+        <div ref={terminalRef} className="mt-12 md:mt-20 max-w-4xl mx-auto glass rounded-2xl overflow-hidden shadow-2xl">
           <div className="bg-card px-4 py-3 border-b border-border flex items-center space-x-2 text-left">
             <div className="w-3 h-3 rounded-full bg-red-500/50" />
             <div className="w-3 h-3 rounded-full bg-yellow-500/50" />

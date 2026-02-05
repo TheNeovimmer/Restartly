@@ -9,6 +9,9 @@ const CustomCursor = () => {
   const [magneticEl, setMagneticEl] = useState(null); // Target element for magnetic effect
 
   useGSAP(() => {
+    // Disable on mobile/touch
+    if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024) return;
+
     const cursor = cursorRef.current;
     const follower = followerRef.current;
     if (!cursor || !follower) return;
@@ -134,16 +137,19 @@ const CustomCursor = () => {
      }
   }, [isHovering, magneticEl]);
 
+  // Return null if on mobile/touch to save rendering
+  if (typeof window !== 'undefined' && (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024)) return null;
+
   return (
     <>
       <div 
         ref={followerRef} 
-        className="fixed top-0 left-0 border border-white/30 rounded-full pointer-events-none z-[9999] backdrop-blur-[1px] transition-colors"
+        className="fixed top-0 left-0 border border-white/30 rounded-full pointer-events-none z-[9999] backdrop-blur-[1px] transition-colors hidden lg:block"
         style={{ transform: 'translate(-50%, -50%)' }}
       />
       <div 
         ref={cursorRef} 
-        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999] hidden lg:block"
         style={{ transform: 'translate(-50%, -50%)' }}
       />
     </>

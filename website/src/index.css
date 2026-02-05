@@ -10,12 +10,15 @@
 }
 
 /* Global Scrollbar Hiding */
-*::-webkit-scrollbar {
-  display: none !important;
-}
-* {
+html, body, .no-scrollbar {
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
 }
 
 :root {
@@ -102,6 +105,8 @@ body {
 
 html {
   overflow-x: hidden;
+  /* scroll-behavior: smooth; removed to avoid conflict with Lenis */
+  scroll-padding-top: 80px; /* Offset for fixed navbar */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

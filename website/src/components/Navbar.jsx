@@ -66,8 +66,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-2xl border-b border-border shadow-2xl transition-all duration-300 origin-top ${isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}`}>
-        <div className="flex flex-col p-8 space-y-6">
+      <div className={`md:hidden fixed top-[73px] left-0 right-0 bottom-0 bg-card/98 backdrop-blur-2xl border-b border-border shadow-2xl transition-all duration-300 origin-top overflow-y-auto ${isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}`}>
+        <div className="flex flex-col items-center justify-center p-8 space-y-8 min-h-[50vh]">
           <Link 
             to="/" 
             onClick={() => setIsOpen(false)}
